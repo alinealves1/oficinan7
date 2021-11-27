@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-#import django_heroku
+import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,11 +79,11 @@ WSGI_APPLICATION = 'oficina.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'sistema',
+        'NAME': 'heroku_89642bc33254234',
         'PORT': '3306',
-        'HOST': 'localhost',
-        'USER': 'root',
-        'PASSWORD': '',
+        'HOST': 'us-cdbr-east-04.cleardb.com',
+        'USER': 'bd2816507601a5',
+        'PASSWORD': 'aa5df949',
     }
 }
 
@@ -93,7 +93,7 @@ DATABASES = {
 AUTH_PASSWORD_VALIDATORS = [
      {
               'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-          },
+     },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
@@ -135,4 +135,4 @@ MEDIA_ROOT = "{}/media".format(BASE_DIR)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#django_heroku.settings(locals())
+django_heroku.settings(locals())
