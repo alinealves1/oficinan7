@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
+#import django_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -79,22 +79,21 @@ WSGI_APPLICATION = 'oficina.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heroku_1a7f0d0b427d4d8',
+        'NAME': 'sistema',
         'PORT': '3306',
-        'HOST': 'us-cdbr-east-04.cleardb.com',
-        'USER': 'b205ad47b9b9ab',
-        'PASSWORD': '26eb09ae',
+        'HOST': 'localhost',
+        'USER': 'root',
+        'PASSWORD': '',
     }
 }
-mysql://b205ad47b9b9ab:26eb09ae@us-cdbr-east-04.cleardb.com/heroku_1a7f0d0b427d4d8?reconnect=true
 
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
+#Password validation
+#https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
+     {
+              'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+          },
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
@@ -136,4 +135,4 @@ MEDIA_ROOT = "{}/media".format(BASE_DIR)
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.settings(locals())
+#django_heroku.settings(locals())
